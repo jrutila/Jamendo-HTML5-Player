@@ -1,0 +1,15 @@
+This is README for Jamendo HTML5 Player
+
+This player is pure HTML and Javascript. Idea is to make an HTML5 app.
+Main page is written with PHP, but only to render it more easilly. You can "compile" the page by running:
+ php mobile.php > index.html
+
+Directories:
+js - keeps all the javascript
+
+3rd party libraries:
+jQuery
+jQuery Mobile
+jPlayer
+
+3rd party libraries should be fetched from corresponding CDN locations.
