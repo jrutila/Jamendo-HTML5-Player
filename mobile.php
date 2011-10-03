@@ -30,6 +30,10 @@ Copyright 2011 Juho Rutila
 #nowplaying #cover
 {
     width: 100%;
+    max-width: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .play

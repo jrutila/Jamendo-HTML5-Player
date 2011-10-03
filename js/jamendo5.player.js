@@ -10,7 +10,14 @@ function playTrack(track)
     $("#playtitle").html(track["name"]);
     playPlayer();
     $("#jplayer").get(0).trackId = track['id'];
-    
+
+    // Cover element might be hidden -> Use window width
+    var coverWidth = $(window).width();
+    if (coverWidth >= 600)
+        coverWidth = 600;
+    else
+        coverWidth = coverWidth + (600 - coverWidth) % 100;
+
     // Get album
     $.ajax({
         type: 'GET',
@@ -33,7 +40,7 @@ function playTrack(track)
             // Get album cover
             $.ajax({
                 type: 'GET',
-                url: API+"/image/album/json/?id="+album[0]['id']+"&imagesize="+$("#nowplaying #cover").width(),
+                url: API+"/image/album/json/?id="+album[0]['id']+"&imagesize="+coverWidth,
                 complete: function (data) {
                     var imgUrl = eval(data.responseText)[0];
                     $("#nowplaying img").attr('src', imgUrl);
